@@ -643,7 +643,8 @@
         <div class="w-full">
           <img src="./assets/images/contact-me.svg" alt="phone" />
         </div>
-        <form class="w-full" name="contactUS" netlify>
+        <form class="w-full" name="contactUS" data-netlify="true">
+          <input type="hidden" name="form-name" value="contactUS" />
           <label
             for="name"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -676,7 +677,7 @@
           <label
             for="email"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Your Email</label
+            >Email</label
           >
           <div class="relative mb-4">
             <div
