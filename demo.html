@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="./output.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Toggle</title>
+    <link rel="stylesheet" href="output.css">
+    <style>
+        /* Custom styles for transition effect */
+        .transition-all {
+            transition: all 0.3s;
+        }
+    </style>
+    <script defer src="script.js"></script>
 </head>
-<body class="flex justify-center items-center h-screen">
-  <div class="relative">
-    <h1 class="text-[44px] pointer-events-none">Test Heading</h1>
-    <button class="py-2 px-5 bg-blue-500 text-white" onclick="alert('Button Clicked')">Click Me</button>
-  </div>
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white transition-all">
+    <div class="p-6">
+        <h1 class="text-3xl font-bold">Hello, World!</h1>
+        <p class="mt-4">Toggle between dark and light modes using the buttons below.</p>
+        <button id="darkModeBtn" class="bg-blue-500 text-white py-2 px-4 rounded m-4">
+            Switch to Dark Mode
+        </button>
+        <button id="lightModeBtn" class="hidden bg-gray-700 text-white py-2 px-4 rounded m-4">
+            Switch to Light Mode
+        </button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const darkModeBtn = document.getElementById('darkModeBtn');
+            const lightModeBtn = document.getElementById('lightModeBtn');
+
+            // Check local storage for the theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || !savedTheme) {
+                document.documentElement.classList.add('dark');
+                darkModeBtn.classList.add('hidden');
+                lightModeBtn.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                lightModeBtn.classList.add('hidden');
+                darkModeBtn.classList.remove('hidden');
+            }
+
+            // Dark Mode Button Click
+            darkModeBtn.addEventListener('click', function () {
+                document.documentElement.classList.add('dark');
+                darkModeBtn.classList.add('hidden');
+                lightModeBtn.classList.remove('hidden');
+                localStorage.setItem('theme', 'dark');
+                console.log('Dark mode enabled'); // Debugging log
+            });
+
+            // Light Mode Button Click
+            lightModeBtn.addEventListener('click', function () {
+                document.documentElement.classList.remove('dark');
+                lightModeBtn.classList.add('hidden');
+                darkModeBtn.classList.remove('hidden');
+                localStorage.setItem('theme', 'light');
+                console.log('Light mode enabled'); // Debugging log
+            });
+        });
+
+    </script>
 </body>
 </html>

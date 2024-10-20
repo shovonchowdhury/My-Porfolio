@@ -47,9 +47,13 @@
                 transform-origin: 20% 62%; /* Adjust this percentage for more or less right shift */
                 }
         }
+
+        .transition-all {
+            transition: all 0.3s;
+        }
     </style>
 </head>
-<body class="bg-[#111] text-white font-['Nunito']">
+<body class="bg-[#111] text-white font-['Nunito'] transition-all">
     <section class="flex flex-col justify-between h-screen">
         <header class="flex z-10 pointer-events-none justify-between items-center px-4 mt-4  mx-auto container">
 
@@ -101,9 +105,9 @@
             </svg>
 
             <div class="flex gap-4 pointer-events-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg id="lightModeBtn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun hidden cursor-pointer"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg id="darkModeBtn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 
                 <a href="tel:+0881995998266">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -277,7 +281,7 @@
                 <div class="flex items-center">
                   <div class="px-4 md:px-16 lg:px-24">
                     <h2 class="my-4 text-2xl text-[#1595B6]">ABOUT ME</h2>
-                    <p class="text-justify text-sm md:text-base mb-2">I help business owners and busy web developers to design & develop creative websites that fits their vision and attracts the visitors to stay for ever. Technologies and tools that I use to create such awesome websites.</p>
+                    <p class="text-justify text-sm md:text-base mb-2">I graduated with a degree in Computer Science and Engineering from Sylhet Engineering College. My passion for problem-solving has always driven me, and I am particularly enthusiastic about web development, especially with the MERN stack. I am committed to continuously improving my skills and aspiring to excel in this dynamic field.</p>
                     <ul class="flex flex-wrap gap-2 mt-2">
                       <li
                         class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
@@ -297,11 +301,6 @@
                       <li
                         class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
                       >
-                        #swiper.js
-                      </li>
-                      <li
-                        class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-                      >
                         #mongoDB
                       </li>
                       <li
@@ -313,6 +312,11 @@
                         class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
                       >
                         #css
+                      </li>
+                      <li
+                        class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+                      >
+                        #tailwind
                       </li>
                       <li
                         class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
@@ -358,7 +362,7 @@
             </div>
         </div>
         <div class="relative self-center after:content-[''] after:absolute after:w-[2px] after:h-5 after:bg-[#444] after:left-1/2 after:-translate-x-1/2 after:top-[100px]">
-            <button class=" py-2 px-5 items-center relative rounded font-extrabold bg-gradient-to-l from-[#1595B6] to-[#4196ac66] hover:scale-110 ease-in-out duration-100 group  mb-20">
+            <button id="scrollButton" class=" py-2 px-5 items-center relative rounded font-extrabold bg-gradient-to-l from-[#1595B6] to-[#4196ac66] hover:scale-110 ease-in-out duration-100 group  mb-20">
                 Latest Works
                 
                 <svg
@@ -405,117 +409,116 @@
     </section>
 
 
-    <section class="max-w-screen-xl mx-auto px-4 relative">
-        <h2 class="sm:text-[40px] text-4xl mx-auto w-max text-center px-4 py-2 text-[#1595B6] border-b-2 border-[#1595B6] bg-[#111] relative z-10 font-bold">Latest Works</h2>
+    <section id="targetSection" class="max-w-screen-xl mx-auto px-4 relative">
+        <h2  class="sm:text-[40px] text-4xl mx-auto w-max text-center px-4 py-2 text-[#1595B6] border-b-2 border-[#1595B6] bg-[#111] relative z-10 font-bold">Latest Works</h2>
 
+        
         <div
-        class="flex flex-col sm:flex-row gap-4 mt-8 sm:gap-[80px] items-center sm:mt-20 relative"
-      >
-        <div
-          class="h-[1px] left-1/4 right-1/2 bg-[rgb(247,109,17)] absolute top-1/2 hidden sm:block"
-        ></div>
-        <div
-          class="w-4 h-4 rounded-full border-[3px] border-[rgb(247,109,17)] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block"
-        ></div>
-        <a
-          href="https://ecommerce-client-3.onrender.com/"
-          target="_blank"
-          class="flex w-full relative justify-center sm:justify-start"
+          class="flex flex-col sm:flex-row gap-4 mt-8 sm:gap-[80px] items-center sm:mt-20 relative"
         >
           <div
-            class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200"
+            class="h-[1px] left-1/4 right-1/2 bg-[rgb(247,109,17)] absolute top-1/2 hidden sm:block"
+          ></div>
+          <div
+            class="w-4 h-4 rounded-full border-[3px] border-[rgb(247,109,17)] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block"
+          ></div>
+          <a
+            href="https://ecommerce-client-3.onrender.com/"
+            target="_blank"
+            class="flex w-full relative justify-center sm:justify-start"
           >
-            <img
-              class="max-w-[400px] w-full mr-auto relative z-10 drop-shadow-[0_0px_60px_#1595B6]"
-              src="./assets/images/ECommarce .webp"
-              alt=""
-            />
-            <span
-              class="flex group-hover:-top-14 ease-jump duration-200 bg-[rgb(255,113,19)] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2"
-              >Ecommerce
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-external-link"
+            <div
+              class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200"
+            >
+              <img
+                class="max-w-[400px] w-full mr-auto relative z-10 drop-shadow-[0_0px_60px_#1595B6]"
+                src="./assets/images/ECommarce .webp"
+                alt=""
+              />
+              <span
+                class="flex group-hover:-top-14 ease-jump duration-200 bg-[rgb(255,113,19)] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2"
+                >Ecommerce
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-external-link"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  ></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <div class="w-full">
+            <h3 class="text-[rgb(245,136,62)] font-bold text-2xl md:text-4xl">
+              Ecommerce
+            </h3>
+            <span class="text-[rgb(245,136,62)] text-base md:text-lg"
+              >(A FullStack Ecommerce Web App)</span
+            >
+            <p class="text-justify text-sm md:text-base mt-2">
+              Built a full-stack eCommerce app using Node.js, MongoDB, React.js, and Tailwind CSS. Features include user registration, product browsing, cart functionality, PayPal payments, and admin controls for product management and order tracking.
+            </p>
+
+            <ul class="flex flex-wrap gap-2 mt-2">
+              <li
+                class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
               >
-                <path
-                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                ></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-            </span>
+                #react.js
+              </li>
+              <li
+                class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+              >
+                #express.js
+              </li>
+              <li
+                class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+              >
+                #node.js
+              </li>
+              <li
+                class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+              >
+                #mongoDB
+              </li>
+              <li
+                class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+              >
+                #cloudinary
+              </li>
+              <li
+                class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+              >
+                #javascript
+                
+              </li>
+              <li
+                class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+              >
+                #css
+              </li>
+              <li
+                class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+              >
+                #tailwind
+              </li>
+              <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+              >
+                #shadecdn
+              </li>
+            </ul>
           </div>
-        </a>
-
-        <div class="w-full">
-          <h3 class="text-[rgb(245,136,62)] font-bold text-2xl md:text-4xl">
-            Ecommerce
-          </h3>
-          <span class="text-[rgb(245,136,62)] text-base md:text-lg"
-            >(A FullStack Ecommerce Web App)</span
-          >
-          <p class="text-justify text-sm md:text-base mt-2">
-            Deeply understand advanced concepts, practice with real-world
-            exercises, build expertise with hands-on projects to boost your
-            career.
-          </p>
-
-          <ul class="flex flex-wrap gap-2 mt-2">
-            <li
-              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-            >
-              #react.js
-            </li>
-            <li
-              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-            >
-              #express.js
-            </li>
-            <li
-              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-            >
-              #node.js
-            </li>
-            <li
-              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-            >
-              #swiper.js
-            </li>
-            <li
-              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-            >
-              #mongoDB
-            </li>
-            <li
-              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-            >
-              #mongoose
-            </li>
-            <li
-              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-            >
-              #css
-            </li>
-            <li
-              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-            >
-              #javascript
-            </li>
-            <li
-              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-            >
-              #figma
-            </li>
-          </ul>
-        </div>
         </div>
 
         <div
@@ -529,9 +532,7 @@
             >(Social Media Web Frontend)</span
           >
           <p class="text-justify text-sm md:text-base mt-2">
-            Being a lead developer, revamped the site to a highly responsive,
-            and interactive website. Created new features and pages. Worked as a
-            team with product manager and ux designer.
+            Built a responsive social media demo with React and Firebase for authentication, post creation, and user interactions. Implemented stories with Swiper.
           </p>
 
           <ul class="flex flex-wrap gap-2 mt-2">
@@ -543,7 +544,12 @@
             <li
               class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
             >
-              #express.js
+              #javascript
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #firebase
             </li>
             <li
               class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
@@ -558,23 +564,15 @@
             <li
               class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
             >
-              #mongoDB
+              #tailwind
             </li>
-            <li
-              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-            >
-              #mongoose
-            </li>
+           
             <li
               class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
             >
               #css
             </li>
-            <li
-              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-            >
-              #javascript
-            </li>
+            
             <li
               class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
             >
@@ -625,7 +623,8 @@
             </span>
           </div>
         </a>
-      </div>
+        </div>
+        
 
 
 
@@ -647,10 +646,10 @@
           <input type="hidden" name="form-name" value="contactUS" />
           <label
             for="name"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block  text-sm font-medium text-gray-900 dark:text-white"
             >Name</label
           >
-          <div class="relative mb-4">
+          <div class="relative mb-0 md:mb-4">
             <div
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
@@ -679,7 +678,7 @@
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >Email</label
           >
-          <div class="relative mb-4">
+          <div class="relative mb-0 md:mb-4">
             <div
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
             >
@@ -765,6 +764,50 @@
                 closeModal();
             }
         }
+
+        document.getElementById('scrollButton').addEventListener('click', function() {
+          document.getElementById('targetSection').scrollIntoView({ behavior: 'smooth' });
+        });
+
+
+
+
+
+      //  document.addEventListener('DOMContentLoaded', function () {
+      //       const darkModeBtn = document.getElementById('darkModeBtn');
+      //       const lightModeBtn = document.getElementById('lightModeBtn');
+
+      //       // Check local storage for the theme preference
+      //       const savedTheme = localStorage.getItem('theme');
+      //       if (savedTheme === 'dark' || !savedTheme) {
+      //           document.documentElement.classList.add('dark');
+      //           darkModeBtn.classList.add('hidden');
+      //           lightModeBtn.classList.remove('hidden');
+      //       } else {
+      //           document.documentElement.classList.remove('dark');
+      //           lightModeBtn.classList.add('hidden');
+      //           darkModeBtn.classList.remove('hidden');
+      //       }
+
+      //       // Dark Mode Button Click
+      //       darkModeBtn.addEventListener('click', function () {
+      //           document.documentElement.classList.add('dark');
+      //           darkModeBtn.classList.add('hidden');
+      //           lightModeBtn.classList.remove('hidden');
+      //           localStorage.setItem('theme', 'dark');
+      //           console.log('Dark mode enabled'); // Debugging log
+      //       });
+
+      //       // Light Mode Button Click
+      //       lightModeBtn.addEventListener('click', function () {
+      //           document.documentElement.classList.remove('dark');
+      //           lightModeBtn.classList.add('hidden');
+      //           darkModeBtn.classList.remove('hidden');
+      //           localStorage.setItem('theme', 'light');
+      //           console.log('Light mode enabled'); // Debugging log
+      //       });
+      //   });
+
     </script>
     
     
