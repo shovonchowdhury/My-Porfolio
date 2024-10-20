@@ -8,12 +8,52 @@
     <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="style.css">
     <!-- <script src="./matter.js" defer></script> -->
+    <style>
+        /* Keyframes to scale modal from a single point */
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    
+        /* Apply the animation to the modal */
+        .scale-in {
+            animation: scaleUp 0.5s ease forwards;
+        }
+
+        .custom-origin {
+        transform-origin: 10% 57%; /* Adjust this percentage for more or less right shift */
+        }
+    
+        /* Keyframes to scale down */
+        @keyframes scaleDown {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+    
+        /* Apply the scale-down animation for closing */
+        .scale-out {
+            animation: scaleDown 0.5s ease forwards;
+        }
+                @media (max-width: 640px) {
+                  .custom-origin {
+                transform-origin: 20% 62%; /* Adjust this percentage for more or less right shift */
+                }
+        }
+    </style>
 </head>
 <body class="bg-[#111] text-white font-['Nunito']">
     <section class="flex flex-col justify-between h-screen">
         <header class="flex z-10 pointer-events-none justify-between items-center px-4 mt-4  mx-auto container">
 
-            <svg class="" version="1.0" xmlns="http://www.w3.org/2000/svg"
+            <svg class=" w-[60px] md:w-[80px]" version="1.0" xmlns="http://www.w3.org/2000/svg"
                 width="80" height="80" viewBox="10 0 150 160"
                 preserveAspectRatio="xMidYMid meet">
                 <metadata>
@@ -81,7 +121,7 @@
             
             <div class="mx-auto container ">
                 
-                <svg class="pointer-events-none absolute top-0 left-1/2 -translate-y-20 lg:-translate-y-1/3 -translate-x-1/2 lg:translate-x-1/2  md:w-[400px] h-auto opacity-45 md:opacity-100 " version="1.0" xmlns="http://www.w3.org/2000/svg"
+                <svg class="pointer-events-none absolute top-0 left-1/2 -translate-y-20 lg:-translate-y-1/3 -translate-x-1/2 lg:translate-x-1/2  md:w-[400px] h-auto opacity-55 md:opacity-100 " version="1.0" xmlns="http://www.w3.org/2000/svg"
                 width="220" height="368" viewBox="5 10 150 160"
                 preserveAspectRatio="xMidYMid meet">
                 <metadata>
@@ -133,11 +173,11 @@
                     22 -36 30 0 15 147 103 174 103 11 0 83 -37 160 -81z"/>
                     </g>
                 </svg>
-                <div class="relative ml-4 md:ml-12  ">
+                <div class="relative ml-8 md:ml-12  ">
                     <h1 class="pointer-events-none  text-[44px] md:text-6xl font-['Spartan'] mr-12 ">Shovon Das Chowdhury</h1>
                     
                     <p class=" font-['Merriweather'] italic my-4 md:my-8 ">MERN Stack Developer</p>
-                    <button class="py-2 px-5 items-center relative rounded font-extrabold bg-gradient-to-l from-[#1595B6] to-[#4196ac66] hover:scale-110 ease-in-out duration-100 group">
+                    <button class="py-2 px-5 items-center relative rounded font-extrabold bg-gradient-to-l from-[#1595B6] to-[#4196ac66] hover:scale-110 ease-in-out duration-100 group" onclick="openModal()">
                         About Me
                         
                         <svg
@@ -180,10 +220,12 @@
                             </g>
                         </svg>
                     </button>
+                    
                 </div>
             </div>
+            
 
-            <ul class="ml-auto space-y-6 text-[#b0b2c3] absolute right-8">
+            <ul class="ml-auto space-y-6 text-[#b0b2c3] absolute right-4 lg:right-8">
                 <li >
                     <a href="https://www.linkedin.com/in/shovon-das-chowdhury-431aa7250/" target="_blank" >
                         <svg class="w-7 hover:text-white hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -225,6 +267,95 @@
                     </a>
                 </li>
             </ul>
+        </div>
+        <!-------------------------------------- Modal ---------------------------------------------->
+        <div id="modal" class="fixed inset-0 flex z-30 items-center justify-center bg-black bg-opacity-50 hidden" onclick="closeOnClickOutside(event)">
+            <div class="bg-[#111] w-[90%] mx-auto h-[90%] p-2 md:h-screen mb-6 md:mb-0  rounded-lg transform scale-0 transition-transform duration-500 custom-origin" onclick="event.stopPropagation()">
+                <div class="flex justify-end ">
+                    <svg onclick="closeModal()" class="w-6 p-1 text-white cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+                </div>
+                <div class="flex items-center">
+                  <div class="px-4 md:px-16 lg:px-24">
+                    <h2 class="my-4 text-2xl text-[#1595B6]">ABOUT ME</h2>
+                    <p class="text-justify text-sm md:text-base mb-2">I help business owners and busy web developers to design & develop creative websites that fits their vision and attracts the visitors to stay for ever. Technologies and tools that I use to create such awesome websites.</p>
+                    <ul class="flex flex-wrap gap-2 mt-2">
+                      <li
+                        class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+                      >
+                        #react.js
+                      </li>
+                      <li
+                        class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+                      >
+                        #express.js
+                      </li>
+                      <li
+                        class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+                      >
+                        #node.js
+                      </li>
+                      <li
+                        class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+                      >
+                        #swiper.js
+                      </li>
+                      <li
+                        class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+                      >
+                        #mongoDB
+                      </li>
+                      <li
+                        class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+                      >
+                        #mongoose
+                      </li>
+                      <li
+                        class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+                      >
+                        #css
+                      </li>
+                      <li
+                        class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+                      >
+                        #javascript
+                      </li>
+                      <li
+                        class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+                      >
+                        #figma
+                      </li>
+                    </ul>
+
+                    <h2 class="my-12 text-2xl text-[#1595B6]">MERN STACK</h2>
+                    <div class="tooltip-container lg:pr-24 gap-6">
+                      <div class="tooltip-icon mongodb">
+                        <img src="assets/icons/mongodb.svg" alt="mongodb" />
+                        <span>M</span>
+                        <div class="tooltip"><span>mongoDB</span></div>
+                      </div>
+                      <div class="tooltip-icon express">
+                          <div class="tooltip"><span>Express.js</span></div>
+                        <img src="assets/icons/express.svg" alt="express" />
+                        <span>E</span>
+                      </div>
+                      <div class="tooltip-icon react">
+                        <img src="assets/icons/react.svg" alt="react" />
+                        <span>R</span>
+                        <div class="tooltip"><span>React.js</span></div>
+                      </div>
+                      <div class="tooltip-icon node">
+                        <img src="assets/icons/node.svg" alt="node" />
+                        <span>N</span>
+                        <div class="tooltip"><span>Node.js</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <img src="assets/images/modal_photo.webp" alt="" class="hidden md:block w-2/5 pr-10">
+
+                </div>
+                <!-- Close Button -->
+                
+            </div>
         </div>
         <div class="relative self-center after:content-[''] after:absolute after:w-[2px] after:h-5 after:bg-[#444] after:left-1/2 after:-translate-x-1/2 after:top-[100px]">
             <button class=" py-2 px-5 items-center relative rounded font-extrabold bg-gradient-to-l from-[#1595B6] to-[#4196ac66] hover:scale-110 ease-in-out duration-100 group  mb-20">
@@ -501,6 +632,45 @@
         <div class="w-[2px] hidden sm:block bg-[#1595B6] absolute top-0 bottom-0 left-1/2 -translate-x-1/2">
         </div>
     </section>
+
+    <script>
+        // Function to open the modal with animation
+        function openModal() {
+            const modal = document.getElementById("modal");
+            const modalContent = modal.querySelector("div");
+    
+            modal.classList.remove("hidden"); // Show modal background
+            modalContent.classList.remove("scale-out"); // Remove any previous close animation
+            modalContent.classList.add("scale-in"); // Add the open animation class
+        }
+    
+        // Function to close the modal with animation
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            const modalContent = modal.querySelector("div");
+    
+            modalContent.classList.remove("scale-in"); // Remove the open animation
+            modalContent.classList.add("scale-out"); // Add the close animation class
+    
+            setTimeout(() => {
+                modal.classList.add("hidden"); // Hide modal background after animation completes
+            }, 500); // Match the animation duration
+        }
+    
+        // Function to close modal when clicking outside of it
+        function closeOnClickOutside(event) {
+            const modalContent = document.querySelector("#modal div");
+    
+            // If the click is outside the modal content, close the modal
+            if (!modalContent.contains(event.target)) {
+                closeModal();
+            }
+        }
+    </script>
+    
+    
+    
+    
 
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
